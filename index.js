@@ -1,11 +1,8 @@
 #!/usr/bin/env node
 
 import fs from "fs/promises";
-import { config } from "dotenv";
 import { Configuration, OpenAIApi } from "openai";
 import readline from "readline";
-
-config();
 
 async function generateComments(filePath, apiKey) {
   const openai = new OpenAIApi(
