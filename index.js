@@ -17,7 +17,7 @@ async function generateComments(filePath) {
 
   const fileContent = await fs.readFile(filePath, "utf-8");
 
-  const prompt = `Add appropriate comments to the following code. Respond with the commented code.\n\n${fileContent}\n\n`;
+  const prompt = `Add appropriate comments to the following code. Respond with the commented code in a code block.\n\n${fileContent}\n\n`;
 
   const res = await openai.createChatCompletion({
     model: "gpt-3.5-turbo",
@@ -25,7 +25,9 @@ async function generateComments(filePath) {
   });
 
   const response = res.data.choices[0].message.content;
-  console.log(response);
+  const trimmedResponse = response.slice(3, -3);
+
+  await fs.writeFile(filePath, trimmedResponse, "utf-8");
 }
 
 if (process.argv.length < 3) {
