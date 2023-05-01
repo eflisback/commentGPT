@@ -13,7 +13,7 @@
   "dependencies": {
     "dotenv": "^10.0.0",
     "fs": "0.0.1-security",
-    "openai": "^0.27.0"
+    "openai": "^3.2.1"
   },
   "bin": {
     "commentGPT": "index.js"
