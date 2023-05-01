@@ -2,17 +2,20 @@
   "name": "commentgpt",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "node index.js",
-    "test": "node testKey.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "module",
   "dependencies": {
-    "dotenv": "^16.0.3",
-    "openai": "^3.2.1"
+    "dotenv": "^10.0.0",
+    "fs": "0.0.1-security",
+    "openai": "^0.27.0"
+  },
+  "bin": {
+    "commentGPT": "index.js"
   }
 }
